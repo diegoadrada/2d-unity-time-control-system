@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
 
     public float playerSpeed = 10f;
 
-
     private float horizontalInput;
     private float verticalInput;
 
