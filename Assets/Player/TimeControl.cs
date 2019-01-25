@@ -9,20 +9,21 @@ using System.Collections.Generic;
 public class TimeControl : MonoBehaviour
 {
     public int secondsToRewind = 5;
-    public List<Vector2> objectRecordedPositions = new List<Vector2>();
+    public List<TimeRecordData> objectRecordedPositions = new List<TimeRecordData>();
 
     private TimeManager timeController;
 
     private const int keyFrame = 5;
+
     private int frameCounter = 0;
-    private int reverseCounter = 0;
+    private int reverseCounter = 5;
 
     private Vector2 currentPosition;
     private Vector2 previousPosition;
 
     private bool rewindInitialized = false;
 
-    private int rewindTimeThreshold;
+    private int rewindTimeThreshold;  
 
     private void Start()
     {
@@ -39,7 +40,7 @@ public class TimeControl : MonoBehaviour
 
             if (rewindInitialized)
             {
-                RestoreRewindInitialize();
+                rewindInitialized = false;
             }          
         }
 
@@ -58,7 +59,13 @@ public class TimeControl : MonoBehaviour
         else
         {
             frameCounter = 0;
-            objectRecordedPositions.Add(transform.position);
+
+            TimeRecordData timeRecordData = new TimeRecordData
+            {
+                position = transform.position
+            };
+
+            objectRecordedPositions.Add(timeRecordData);
         }        
     }
 
@@ -74,7 +81,7 @@ public class TimeControl : MonoBehaviour
     {
         if (!rewindInitialized)
         {
-            InitializeRewind();
+            rewindInitialized = true;
             RestoreObjectPositions();
         }
 
@@ -89,17 +96,7 @@ public class TimeControl : MonoBehaviour
         }
 
         InterpolateObjectPositions();
-    }
-
-    private void RestoreRewindInitialize()
-    {
-        rewindInitialized = false;
-    }
-
-    private void InitializeRewind()
-    {
-        rewindInitialized = true;
-    }    
+    } 
 
     private void RestoreObjectPositions()
     {
@@ -108,8 +105,8 @@ public class TimeControl : MonoBehaviour
 
         if (secondToLastIndex >= 0)
         {
-            currentPosition =  objectRecordedPositions[lastIndex];
-            previousPosition = objectRecordedPositions[secondToLastIndex];
+            currentPosition =  objectRecordedPositions[lastIndex].position;
+            previousPosition = objectRecordedPositions[secondToLastIndex].position;
 
             objectRecordedPositions.RemoveAt(lastIndex);
         }
