@@ -4,7 +4,7 @@
 */
 
 using UnityEngine;
-using System.Collections.Generic;
+
 
 public class Player : MonoBehaviour
 {
@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
 
     public float playerSpeed = 10f;
 
-    public List<Vector2> playerRecordedPositions = new List<Vector2>();
 
     private float horizontalInput;
     private float verticalInput;
@@ -40,13 +39,7 @@ public class Player : MonoBehaviour
     {
         if (timeController.timeStatus == TimeStatus.NORMAL)
         {
-            myRigidbody2D.velocity = new Vector2(horizontalInput * playerSpeed, verticalInput * playerSpeed);
-            RecordPlayerPosition();
-        }
-        
-        if (timeController.timeStatus == TimeStatus.REWIND)
-        {
-            RewindPlayerPosition();
+            NormalPlayerMovement();
         }
     }
 
@@ -56,17 +49,8 @@ public class Player : MonoBehaviour
         verticalInput = Input.GetAxisRaw(InputNames.Vertical);
     }
 
-    private void RecordPlayerPosition()
+    private void NormalPlayerMovement()
     {
-        playerRecordedPositions.Add(myRigidbody2D.position);
-    }
-
-    private void RewindPlayerPosition()
-    {
-        if (playerRecordedPositions.Count > 0)
-        {
-            myRigidbody2D.MovePosition(playerRecordedPositions[playerRecordedPositions.Count - 1]);
-            playerRecordedPositions.RemoveAt(playerRecordedPositions.Count - 1);
-        }
+        myRigidbody2D.velocity = new Vector2(horizontalInput * playerSpeed, verticalInput * playerSpeed);
     }
 }
