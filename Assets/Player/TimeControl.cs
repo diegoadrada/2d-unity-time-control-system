@@ -81,7 +81,7 @@ public class TimeControl : MonoBehaviour
         }
         else
         {
-            recordedDataSamples.Add(new TimeRecordData(transform.position, myRigidbody2D.velocity));
+            recordedDataSamples.Add(new TimeRecordData(myRigidbody2D.position, myRigidbody2D.velocity));
             sampleRecordTimer = 0;
         }        
     }
@@ -125,7 +125,7 @@ public class TimeControl : MonoBehaviour
     {
         float interpolationPercentage = sampleRewindTimer / sampleThreshold;
 
-        transform.position = Vector2.Lerp(currentPosition, previousPosition, interpolationPercentage);
+        myRigidbody2D.position = Vector2.Lerp(currentPosition, previousPosition, interpolationPercentage);
         myRigidbody2D.velocity = Vector2.Lerp(currentVelocity, previousVelocity, interpolationPercentage);
     }
 }

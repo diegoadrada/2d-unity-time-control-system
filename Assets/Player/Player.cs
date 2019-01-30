@@ -40,13 +40,16 @@ public class Player : MonoBehaviour
     {
         if (timeController.timeStatus == TimeStatus.NORMAL)
         {
-            myRigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+            //myRigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
             NormalPlayerMovement();
         }
 
         if (timeController.timeStatus == TimeStatus.REWIND)
         {
-            myRigidbody2D.constraints = RigidbodyConstraints2D.None;
+            horizontalInput = 0;
+            verticalInput = 0;
+            //myRigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            Debug.Log(myRigidbody2D.velocity.x);
         }
     }
 
