@@ -38,4 +38,9 @@ public class PlayerAnimations : MonoBehaviour
             mySpriteRenderer.flipX = false;
         }
     }
+
+    public void OnJump()
+    {
+
+    }
 }

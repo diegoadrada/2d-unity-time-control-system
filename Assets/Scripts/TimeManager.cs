@@ -20,11 +20,13 @@ public class TimeManager : MonoBehaviour
         if (Input.GetKey(KeyCode.R))
         {
             timeStatus = TimeStatus.REWIND;
+            Time.timeScale = 2f;
         }
 
         if (Input.GetKeyUp(KeyCode.R))
         {
             timeStatus = TimeStatus.NORMAL;
+            Time.timeScale = 1f;
         }
     }
 }

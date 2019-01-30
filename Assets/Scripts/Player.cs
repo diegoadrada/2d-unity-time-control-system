@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
 
     public float playerSpeed = 10f;
 
+    public GameEvent playerJumpEvent;
+
     private float horizontalInput;
     private float verticalInput;
 
@@ -34,6 +36,11 @@ public class Player : MonoBehaviour
     private void Update()
     {
         GetPlayerAxisInputs();
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
     }
 
     private void FixedUpdate()
@@ -46,10 +53,9 @@ public class Player : MonoBehaviour
 
         if (timeController.timeStatus == TimeStatus.REWIND)
         {
-            horizontalInput = 0;
-            verticalInput = 0;
+            //horizontalInput = 0;
+            //verticalInput = 0;
             //myRigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
-            Debug.Log(myRigidbody2D.velocity.x);
         }
     }
 
@@ -62,5 +68,10 @@ public class Player : MonoBehaviour
     private void NormalPlayerMovement()
     {
         myRigidbody2D.velocity = new Vector2(horizontalInput * playerSpeed, verticalInput * playerSpeed);
+    }
+
+    private void Jump()
+    {
+        playerJumpEvent.Raise();
     }
 }
