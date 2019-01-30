@@ -27,7 +27,6 @@ public class PlayerAnimations : MonoBehaviour
 
         myAnimator.SetFloat(playerSpeedParameter, Mathf.Abs(velocityX));
 
-        Debug.Log(velocityX);
 
         if (velocityX < 0f)
         {
