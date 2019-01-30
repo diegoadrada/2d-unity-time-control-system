@@ -5,7 +5,13 @@
  
 using UnityEngine;
 
-public class TimeRecordData
+[System.Serializable]
+public struct TimeRecordData
 {
     public Vector2 position;
+
+    public TimeRecordData(Vector2 position)
+    {
+        this.position = position;
+    }
 }

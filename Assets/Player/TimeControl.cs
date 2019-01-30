@@ -8,116 +8,112 @@ using System.Collections.Generic;
 
 public class TimeControl : MonoBehaviour
 {
+    [Range (1,10)]
+    public int dataSamplesPerSecond = 1;
+
     public int secondsToRewind = 5;
-    public List<TimeRecordData> objectRecordedPositions = new List<TimeRecordData>();
+
+    public List<TimeRecordData> recordedData = new List<TimeRecordData>();
 
     private TimeManager timeController;
 
-    private const int keyFrame = 5;
-
-    private int frameCounter = 0;
-    private int reverseCounter = 5;
+    private const float fixedCallsPerSecond = 50;
+    private float sampleThreshold;
+    private float sampleRecordTimer;
+    private float sampleRewindTimer;
+    private int maxDataRecorded;
 
     private Vector2 currentPosition;
     private Vector2 previousPosition;
 
-    private bool rewindInitialized = false;
-
-    private int rewindTimeThreshold;  
+    private bool interpolationStarted;
 
     private void Start()
     {
         timeController = FindObjectOfType<TimeManager>();
-        rewindTimeThreshold = secondsToRewind * keyFrame * 2;
+
+        sampleThreshold = fixedCallsPerSecond / dataSamplesPerSecond;
+        maxDataRecorded = secondsToRewind * dataSamplesPerSecond;
     }
+
 
     private void FixedUpdate()
     {
         if (timeController.timeStatus == TimeStatus.NORMAL)
         {
-            RecordObjectPosition();
-            LimitRecordedPositions();
-
-            if (rewindInitialized)
+            if (interpolationStarted)
             {
-                rewindInitialized = false;
-            }          
+                interpolationStarted = false;
+            }
+
+            RecordObjectData();
+            LimitRecordedData();
         }
 
         if (timeController.timeStatus == TimeStatus.REWIND)
         {
-            RewindObjectPosition();
+            if (recordedData.Count >= 2)
+            {
+                if (!interpolationStarted)
+                {
+                    SetPositionsToInterpolate();
+                    interpolationStarted = true;
+                }
+
+                RewindObjectData();
+                InterpolateObjectPositions();
+            }
         }
     }
 
-    private void RecordObjectPosition()
+    private void RecordObjectData()
     {
-        if (frameCounter < keyFrame)
+        if (sampleRecordTimer < sampleThreshold)
         {
-            frameCounter += 1;
+            sampleRecordTimer++;
         }
         else
         {
-            frameCounter = 0;
-
-            TimeRecordData timeRecordData = new TimeRecordData
-            {
-                position = transform.position
-            };
-
-            objectRecordedPositions.Add(timeRecordData);
+            recordedData.Add(new TimeRecordData(transform.position));
+            sampleRecordTimer = 0;
         }        
     }
 
-    private void LimitRecordedPositions()
+    private void LimitRecordedData()
     {
-        if (objectRecordedPositions.Count > rewindTimeThreshold)
+        if (recordedData.Count > maxDataRecorded)
         {
-            objectRecordedPositions.RemoveAt(0);
+            recordedData.RemoveAt(0);
         }
     }
 
-    private void RewindObjectPosition()
+    private void RewindObjectData()
     {
-        if (!rewindInitialized)
+        if (sampleRewindTimer < sampleThreshold)
         {
-            rewindInitialized = true;
-            RestoreObjectPositions();
-        }
-
-        if (reverseCounter > 0)
-        {
-            reverseCounter -= 1;
+            sampleRewindTimer++;
         }
         else
         {
-            reverseCounter = keyFrame;
-            RestoreObjectPositions();
+            SetPositionsToInterpolate();
+            sampleRewindTimer = 0;            
         }
-
-        InterpolateObjectPositions();
     } 
 
-    private void RestoreObjectPositions()
+    private void SetPositionsToInterpolate()
     {
-        int lastIndex = objectRecordedPositions.Count - 1;
-        int secondToLastIndex = objectRecordedPositions.Count - 2;
+        int lastIndex = recordedData.Count - 1;
+        int secondToLastIndex = recordedData.Count - 2;
 
-        if (secondToLastIndex >= 0)
-        {
-            currentPosition =  objectRecordedPositions[lastIndex].position;
-            previousPosition = objectRecordedPositions[secondToLastIndex].position;
+        currentPosition = recordedData[lastIndex].position;
+        previousPosition = recordedData[secondToLastIndex].position;
 
-            objectRecordedPositions.RemoveAt(lastIndex);
-        }
+        recordedData.RemoveAt(lastIndex);
     }
 
     private void InterpolateObjectPositions()
     {
-        if (objectRecordedPositions.Count > 1)
-        {
-            float interpolation = (float)reverseCounter / (float)keyFrame;
-            transform.position = Vector2.Lerp(previousPosition, currentPosition, interpolation);
-        }
+        float interpolationPercentage = sampleRewindTimer / sampleThreshold;
+        transform.position = Vector2.Lerp(currentPosition, previousPosition, interpolationPercentage);
     }
 }

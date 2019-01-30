@@ -472,8 +472,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac633e412892db419d3c555c59485ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataSamplesPerSecond: 10
   secondsToRewind: 5
-  objectRecordedPositions: []
+  recordedData: []
 --- !u!1 &1345405620
 GameObject:
   m_ObjectHideFlags: 0
