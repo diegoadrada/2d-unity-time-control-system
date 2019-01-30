@@ -2,24 +2,34 @@ fileFormatVersion: 2
 guid: 428a704cff7839f408517f856ac315cd
 TextureImporter:
   fileIDToRecycleName:
-    21300000: AdventureGirl_SpriteSheet_0
-    21300002: AdventureGirl_SpriteSheet_1
-    21300004: AdventureGirl_SpriteSheet_2
-    21300006: AdventureGirl_SpriteSheet_3
-    21300008: AdventureGirl_SpriteSheet_4
-    21300010: AdventureGirl_SpriteSheet_5
-    21300012: AdventureGirl_SpriteSheet_6
-    21300014: AdventureGirl_SpriteSheet_7
-    21300016: AdventureGirl_SpriteSheet_8
-    21300018: AdventureGirl_SpriteSheet_9
-    21300020: AdventureGirl_SpriteSheet_10
-    21300022: AdventureGirl_SpriteSheet_11
-    21300024: AdventureGirl_SpriteSheet_12
-    21300026: AdventureGirl_SpriteSheet_13
-    21300028: AdventureGirl_SpriteSheet_14
-    21300030: AdventureGirl_SpriteSheet_15
-    21300032: AdventureGirl_SpriteSheet_16
-    21300034: AdventureGirl_SpriteSheet_17
+    21300000: Idle_0
+    21300002: Idle_1
+    21300004: Idle_2
+    21300006: Idle_3
+    21300008: Idle_4
+    21300010: Idle_5
+    21300012: Idle_6
+    21300014: Idle_7
+    21300016: Idle_8
+    21300018: Idle_9
+    21300020: Run_0
+    21300022: Run_1
+    21300024: Run_2
+    21300026: Run_3
+    21300028: Run_4
+    21300030: Run_5
+    21300032: Run_6
+    21300034: Run_7
+    21300036: Jump_0
+    21300038: Jump_1
+    21300040: Jump_2
+    21300042: Jump_3
+    21300044: Jump_4
+    21300046: Jump_5
+    21300048: Jump_6
+    21300050: Jump_7
+    21300052: Jump_8
+    21300054: Jump_9
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -113,361 +123,561 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AdventureGirl_SpriteSheet_0
+      name: Idle_0
       rect:
         serializedVersion: 2
-        x: 45
-        y: 830
-        width: 116
-        height: 186
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76bcab0bc5523e24b8b8bf47f8959857
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AdventureGirl_SpriteSheet_1
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 828
+        x: 3
+        y: 836
         width: 116
         height: 188
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0682e4ab550497741a4464f18fb22e0a
+      spriteID: eeeb2b82c287e92499298b907c5ee27a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AdventureGirl_SpriteSheet_2
+      name: Idle_1
       rect:
         serializedVersion: 2
-        x: 406
-        y: 830
+        x: 126
+        y: 839
         width: 115
-        height: 186
+        height: 185
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7d69fd5df1405e489160551ddde3935
+      spriteID: 7c8b09195c5a2b64d811b3e3a9aa2e78
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AdventureGirl_SpriteSheet_3
+      name: Idle_2
       rect:
         serializedVersion: 2
-        x: 592
-        y: 828
-        width: 116
-        height: 188
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d75990d11c275d14ea8f665e8940d853
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AdventureGirl_SpriteSheet_4
-      rect:
-        serializedVersion: 2
-        x: 770
-        y: 828
+        x: 251
+        y: 836
         width: 117
         height: 188
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 004e7a731e9b0fd47825ebfc56b47753
+      spriteID: d5eb1ae06c41cd847a70276e8fe1ecbc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AdventureGirl_SpriteSheet_5
+      name: Idle_3
       rect:
         serializedVersion: 2
-        x: 46
-        y: 621
-        width: 118
+        x: 380
+        y: 837
+        width: 116
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2600375b9e92c9a42b739a796d0c86bc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_4
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 840
+        width: 116
         height: 184
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 066ac7ff8d8df3142b88ba447734f1cb
+      spriteID: 481a76826a67eda429d98f07eb526644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AdventureGirl_SpriteSheet_6
+      name: Idle_5
       rect:
         serializedVersion: 2
-        x: 216
-        y: 621
-        width: 119
+        x: 631
+        y: 840
+        width: 117
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c60be5a06bd88c5408d09776a5521f8a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_6
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 837
+        width: 120
         height: 185
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 514102edf625436458b6ba3bfb14c680
+      spriteID: 3d59a8cddc51e5d4db6799f62c5f876a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AdventureGirl_SpriteSheet_7
+      name: Idle_7
       rect:
         serializedVersion: 2
-        x: 397
-        y: 611
+        x: 876
+        y: 840
         width: 116
-        height: 185
+        height: 184
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f061ec6ff664fbe48916975dae1fedfb
+      spriteID: 6b89d0a796da51648a38b1f07c4411db
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AdventureGirl_SpriteSheet_8
+      name: Idle_8
       rect:
         serializedVersion: 2
-        x: 589
-        y: 611
+        x: 3
+        y: 644
+        width: 117
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5111d70991f5b98418713df312635633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_9
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 644
         width: 115
-        height: 186
+        height: 188
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca99ce04db5fd204297b446350edef50
+      spriteID: f354e25cc5a9ac343be0b2f148cf36db
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AdventureGirl_SpriteSheet_9
+      name: Run_0
       rect:
         serializedVersion: 2
-        x: 768
-        y: 611
-        width: 116
-        height: 186
+        x: 256
+        y: 645
+        width: 125
+        height: 183
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 559b291ec88687e4f84103b0f182c85f
+      spriteID: 91b4a6db31a0caf409aa656a510f3bcb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AdventureGirl_SpriteSheet_10
+      name: Run_1
       rect:
         serializedVersion: 2
-        x: 56
-        y: 379
-        width: 124
+        x: 379
+        y: 636
+        width: 130
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7249d43958536c040b79b8efb7e4c03f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_2
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 637
+        width: 130
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 744fc530725cf33499b2af635ae99196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_3
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 639
+        width: 154
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae93ae7d7fca9d741baa7c998f8aa420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_4
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 647
+        width: 129
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1664ee0913f9c4e87ff395b8207c2b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_5
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 420
+        width: 127
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 508d682faabebbb4e8f14abd6c914336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_6
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 429
+        width: 133
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd210bdc4c12cc44ebef540d93d64b8e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_7
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 431
+        width: 137
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b9eaf293b3c354aaae3192e321ed87
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump_0
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 424
+        width: 127
         height: 185
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02ff756508a601b4caa617cc03a492c3
+      spriteID: d11f2d13812772743a89c412f39f42d7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AdventureGirl_SpriteSheet_11
+      name: Jump_1
       rect:
         serializedVersion: 2
-        x: 222
-        y: 369
-        width: 129
-        height: 190
+        x: 540
+        y: 423
+        width: 125
+        height: 187
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e0593ae9d5655b4b9e5bd2d3c11ae4c
+      spriteID: 5212e0cba405bdc439f004383edd53de
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AdventureGirl_SpriteSheet_12
+      name: Jump_2
       rect:
         serializedVersion: 2
-        x: 396
-        y: 364
-        width: 131
-        height: 186
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 99f217b168913384ebd76380c284f17b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AdventureGirl_SpriteSheet_13
-      rect:
-        serializedVersion: 2
-        x: 571
-        y: 376
-        width: 153
+        x: 672
+        y: 424
+        width: 125
         height: 181
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 132877eb023020841aa19dcea2541581
+      spriteID: 7650e888d987cfe43b20caa82eafc7a7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AdventureGirl_SpriteSheet_14
+      name: Jump_3
       rect:
         serializedVersion: 2
-        x: 776
-        y: 366
-        width: 132
-        height: 180
+        x: 815
+        y: 431
+        width: 126
+        height: 181
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e08d28886ab6a6b47ad1a21797191fe9
+      spriteID: 89a86b03684b72149b74d0defaa20f27
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AdventureGirl_SpriteSheet_15
+      name: Jump_4
       rect:
         serializedVersion: 2
-        x: 50
-        y: 138
+        x: 6
+        y: 211
+        width: 126
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c3f79f4efbb01a41978466d7bbc2c4a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump_5
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 215
+        width: 125
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c59879050c677640920530f3917bb8e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump_6
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 215
+        width: 125
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e88c3b1c8204c4f938684868355f3f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump_7
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 214
+        width: 127
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 597aff42dcd427641a34aa6ec58e1eb5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump_8
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 213
+        width: 126
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d583bd7f4eb36a4483ec09a39599d31
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump_9
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 214
         width: 128
-        height: 190
+        height: 183
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45cecc9dda4e2284da96a232777ca040
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AdventureGirl_SpriteSheet_16
-      rect:
-        serializedVersion: 2
-        x: 214
-        y: 140
-        width: 134
-        height: 184
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed06e88ac10296b46ae74aeacf436319
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AdventureGirl_SpriteSheet_17
-      rect:
-        serializedVersion: 2
-        x: 377
-        y: 139
-        width: 138
-        height: 180
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16cc1b223a32a0141a8e23011888204e
+      spriteID: c3c7bae12c172e84b9e8bba9659de5f7
       vertices: []
       indices: 
       edges: []

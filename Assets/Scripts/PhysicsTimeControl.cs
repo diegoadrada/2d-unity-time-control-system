@@ -6,7 +6,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class TimeControl : MonoBehaviour
+public class PhysicsTimeControl : MonoBehaviour
 {
     [Range (1,10)]
     public int dataSamplesPerSecond = 5;

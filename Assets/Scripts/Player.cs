@@ -73,5 +73,7 @@ public class Player : MonoBehaviour
     private void Jump()
     {
         playerJumpEvent.Raise();
+
+        myRigidbody2D.AddForce(new Vector2(0, 100f));
     }
 }

@@ -12,7 +12,8 @@ public class PlayerAnimations : MonoBehaviour
     private Animator myAnimator;
     private SpriteRenderer mySpriteRenderer;
 
-    private const string playerSpeedParameter = "PlayerSpeed";
+    private const string playerHorizontalSpeedParameter = "PlayerHorizontalSpeed";
+    private const string playerJumpParameter = "PlayerJump";
 
     private void Start()
     {
@@ -25,8 +26,7 @@ public class PlayerAnimations : MonoBehaviour
     {
         float velocityX = myRigidbody2D.velocity.x;
 
-        myAnimator.SetFloat(playerSpeedParameter, Mathf.Abs(velocityX));
-
+        myAnimator.SetFloat(playerHorizontalSpeedParameter, Mathf.Abs(velocityX));
 
         if (velocityX < 0f)
         {
@@ -41,6 +41,6 @@ public class PlayerAnimations : MonoBehaviour
 
     public void OnJump()
     {
-
+        myAnimator.SetTrigger(playerJumpParameter);
     }
 }
