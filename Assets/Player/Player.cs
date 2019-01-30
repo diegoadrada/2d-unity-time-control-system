@@ -6,6 +6,7 @@
 using UnityEngine;
 
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
     public struct InputNames
@@ -21,7 +22,8 @@ public class Player : MonoBehaviour
 
     private TimeManager timeController;
 
-    private Rigidbody2D myRigidbody2D;  
+    private Rigidbody2D myRigidbody2D;
+
 
     private void Start()
     {
@@ -31,7 +33,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        GetPlayerInputs();
+        GetPlayerAxisInputs();
     }
 
     private void FixedUpdate()
@@ -44,11 +46,11 @@ public class Player : MonoBehaviour
 
         if (timeController.timeStatus == TimeStatus.REWIND)
         {
-            myRigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            myRigidbody2D.constraints = RigidbodyConstraints2D.None;
         }
     }
 
-    private void GetPlayerInputs()
+    private void GetPlayerAxisInputs()
     {
         horizontalInput = Input.GetAxisRaw(InputNames.Horizontal);
         verticalInput = Input.GetAxisRaw(InputNames.Vertical);

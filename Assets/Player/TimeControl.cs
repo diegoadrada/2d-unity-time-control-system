@@ -9,11 +9,11 @@ using System.Collections.Generic;
 public class TimeControl : MonoBehaviour
 {
     [Range (1,10)]
-    public int dataSamplesPerSecond = 1;
+    public int dataSamplesPerSecond = 5;
 
     public int secondsToRewind = 5;
 
-    public List<TimeRecordData> recordedData = new List<TimeRecordData>();
+    public List<TimeRecordData> recordedDataSamples = new List<TimeRecordData>();
 
     private TimeManager timeController;
 
@@ -26,10 +26,17 @@ public class TimeControl : MonoBehaviour
     private Vector2 currentPosition;
     private Vector2 previousPosition;
 
+    private Vector2 currentVelocity;
+    private Vector2 previousVelocity;
+
     private bool interpolationStarted;
+
+    private Rigidbody2D myRigidbody2D;
 
     private void Start()
     {
+        myRigidbody2D = GetComponent<Rigidbody2D>();
+
         timeController = FindObjectOfType<TimeManager>();
 
         sampleThreshold = fixedCallsPerSecond / dataSamplesPerSecond;
@@ -52,7 +59,7 @@ public class TimeControl : MonoBehaviour
 
         if (timeController.timeStatus == TimeStatus.REWIND)
         {
-            if (recordedData.Count >= 2)
+            if (recordedDataSamples.Count >= 2)
             {
                 if (!interpolationStarted)
                 {
@@ -74,16 +81,16 @@ public class TimeControl : MonoBehaviour
         }
         else
         {
-            recordedData.Add(new TimeRecordData(transform.position));
+            recordedDataSamples.Add(new TimeRecordData(transform.position, myRigidbody2D.velocity));
             sampleRecordTimer = 0;
         }        
     }
 
     private void LimitRecordedData()
     {
-        if (recordedData.Count > maxDataRecorded)
+        if (recordedDataSamples.Count > maxDataRecorded)
         {
-            recordedData.RemoveAt(0);
+            recordedDataSamples.RemoveAt(0);
         }
     }
 
@@ -102,18 +109,23 @@ public class TimeControl : MonoBehaviour
 
     private void SetPositionsToInterpolate()
     {
-        int lastIndex = recordedData.Count - 1;
-        int secondToLastIndex = recordedData.Count - 2;
+        int lastIndex = recordedDataSamples.Count - 1;
+        int secondToLastIndex = recordedDataSamples.Count - 2;
 
-        currentPosition = recordedData[lastIndex].position;
-        previousPosition = recordedData[secondToLastIndex].position;
+        currentPosition = recordedDataSamples[lastIndex].position;
+        previousPosition = recordedDataSamples[secondToLastIndex].position;
 
-        recordedData.RemoveAt(lastIndex);
+        currentVelocity = recordedDataSamples[lastIndex].velocity;
+        previousVelocity = recordedDataSamples[secondToLastIndex].velocity;
+
+        recordedDataSamples.RemoveAt(lastIndex);
     }
 
     private void InterpolateObjectPositions()
     {
         float interpolationPercentage = sampleRewindTimer / sampleThreshold;
+
         transform.position = Vector2.Lerp(currentPosition, previousPosition, interpolationPercentage);
+        myRigidbody2D.velocity = Vector2.Lerp(currentVelocity, previousVelocity, interpolationPercentage);
     }
 }
